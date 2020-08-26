@@ -1,0 +1,79 @@
+body{
+    padding:0;
+    margin: 0;
+    background-color: black;
+}
+
+p{
+
+    font-family: montserrat;
+}
+
+.container{
+
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top:25px;
+    background-image: url(backgorund.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-position-x:49% ;
+    background-position-y: 6%;
+    background-size: 38%;
+     
+}
+
+/* Não sei se é a melhor forma de colocar esse background...talvez tenha uma forma mais simples de colocar o background*/
+
+.nome{
+
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 2px;
+    padding-left: 28px;
+
+}
+
+#lista li{
+
+    padding:2px;
+    margin-left:25px;
+    font-size:22px;
+    vertical-align: middle;
+    font-family: montserrat;
+    
+}
+
+#lista li#instagram{
+
+    list-style-image:url(Insta.png);
+    list-style-position:outside;
+    
+}
+
+#lista li#twitter{
+
+    list-style-image:url(Twitter.png);
+    list-style-position:outside;  
+
+}
+
+#lista li#youtube{
+
+    list-style-image:url(Youtube.png);
+    list-style-position:outside;
+    
+}
+
+/*Desafio concluído, queria deixar o texto das listas centralizadas na vertical, para centralizar com a imagem(icone de midia social). O texto está um pouco abaixo das imagens(icones midia social)
+
+
+ 
+
+
+
+
