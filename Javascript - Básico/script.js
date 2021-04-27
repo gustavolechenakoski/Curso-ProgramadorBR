@@ -49,10 +49,18 @@ console.log(f);
 console.log("ab" + "cd");
 console.log(2+1);
 
-var h = null;
+var g = null;
+console.log(g);
+
+var h = false;
 console.log(h);
 
-var i = false;
-console.log(i);
+//operadores aritiméticos
+
+var i = 10;
+var j = 15;
+
+var k = i + j;
+console.log(k);
 
 
