@@ -1,4 +1,4 @@
-// Hello Word alert e console
+/*  Hello Word alert e console
 
 alert("Hello Word");
 
@@ -29,11 +29,11 @@ console.log(c);
 
 var box;
 
-/* Tipos de dados:
+// Tipos de dados:
 
 Boolean - Null - Undefined - Number - String
 
-*/
+
 
 var d = "Palavra \n Palavra";
 
@@ -64,5 +64,24 @@ var k = i + j;
 console.log(k);
 
 
+var l = "3";
+var r = "6";
+
+var o = parseInt(l) + parseInt(r);
+
+console.log(o);
+
+alert("Bom dia Gustavo");
+
+var nome = prompt("Qual o seu nome")
+
+alert("bom dia, " + nome) */ 
+
+var idade = 17;
+
+if (idade >= 18)
+    console.log("pode")
+else    
+    console.log("não pode")
 
 
