@@ -77,11 +77,16 @@ var nome = prompt("Qual o seu nome")
 
 alert("bom dia, " + nome) */ 
 
-var idade = 17;
+/* var idade = 17;
 
 if (idade >= 18)
     console.log("pode")
 else    
-    console.log("não pode")
+    console.log("não pode") */
+
+
+var idade = 20;
+
+idade >=18? console.log("pode") : console.log("não pode")
 
 
