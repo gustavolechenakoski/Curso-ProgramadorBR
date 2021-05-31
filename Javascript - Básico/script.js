@@ -84,9 +84,18 @@ if (idade >= 18)
 else    
     console.log("não pode") */
 
+var nota1 = 8.0;
+var nota2 = 6.0;
 
-var idade = 20;
+var media = (nota1 + nota2) / 2;
 
-idade >=18? console.log("pode") : console.log("não pode")
+if(media >= 7){
+
+    console.log("Você passou com média" + media)
+}
+else{
+
+    console.log("Sua nota"  + media +  "não foi suficiente")
+}
 
 
