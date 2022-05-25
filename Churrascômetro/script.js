@@ -2,6 +2,9 @@
 // Cerveja - 1200 ml por Pessoa + 6 horas - 2000 ml
 // Refrigerante/água - 1000 ml por pessoa + 6 horas 1500ml
 // Crianças valem por 0,5
+// Incluir o pão de alho (opcional) diminuir a quantidade de carne
+// Resultado os dados de entrada adultos, crianças e duração
+//mudar para const o que puder mandar
 
 let inputAdultos = document.getElementById("adultos");
 let inputCriancas = document.getElementById("criancas");
@@ -21,7 +24,7 @@ function calcular() {
     let qdtTotalCerveja = cervejaPP(duracao) * adultos;
     let qdtTotalBebidas = bebidasPP(duracao) * adultos + bebidasPP(duracao) / 2 * criancas;
 
-    resultado.innerHTML = `<p>${qdtTotalCarne}g de Carna<p>`
+    resultado.innerHTML = `<p>${qdtTotalCarne}g de Carne<p>`
     resultado.innerHTML += `<p>${qdtTotalCerveja}ml de Cerveja<p>`
     resultado.innerHTML += `<p>${qdtTotalBebidas}ml de Bebidas<p>`
     
