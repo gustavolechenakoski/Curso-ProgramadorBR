@@ -4,11 +4,13 @@
 // Crianças valem por 0,5
 // Incluir o pão de alho (opcional) diminuir a quantidade de carne
 // Resultado os dados de entrada adultos, crianças e duração
-//mudar para const o que puder mandar
+// mudar para const o que puder mandar
 
 let inputAdultos = document.getElementById("adultos");
 let inputCriancas = document.getElementById("criancas");
 let inputDuracao = document.getElementById("duracao");
+let inputPaoalhoSim = document.getElementById("paoalho-sim");
+let inputPaoalhoNao = document.getElementById("paoalho-nao");
 
 
 let resultado = document.getElementById("resultado");
@@ -19,6 +21,7 @@ function calcular() {
     let adultos = inputAdultos.value;
     let criancas = inputCriancas.value;
     let duracao = inputDuracao.value;
+    //let paoalho = inputPaoalho.value;
 
     let qdtTotalCarne = carnePP(duracao) * adultos + carnePP(duracao) / 2 * criancas;
     let qdtTotalCerveja = cervejaPP(duracao) * adultos;
@@ -27,7 +30,7 @@ function calcular() {
     resultado.innerHTML = `<p>${qdtTotalCarne}g de Carne<p>`
     resultado.innerHTML += `<p>${qdtTotalCerveja}ml de Cerveja<p>`
     resultado.innerHTML += `<p>${qdtTotalBebidas}ml de Bebidas<p>`
-    
+    resultado.innerHTML += `<p>${inputAdultos}ml de Bebidas<p>`
 
 }
 
