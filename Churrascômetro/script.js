@@ -1,6 +1,7 @@
 // Carne - 400 gr por pessoa  + de 6 horas - 650
 // Cerveja - 1200 ml por Pessoa + 6 horas - 2000 ml
 // Refrigerante/água - 1000 ml por pessoa + 6 horas 1500ml
+//pao de alho - 4 por pessoa
 // Crianças valem por 0,5
 // Incluir o pão de alho (opcional) diminuir a quantidade de carne
 // Resultado os dados de entrada adultos, crianças e duração
@@ -21,43 +22,65 @@ function calcular() {
     let adultos = inputAdultos.value;
     let criancas = inputCriancas.value;
     let duracao = inputDuracao.value;
-    //let paoalho = inputPaoalho.value;
-
-    let qdtTotalCarne = carnePP(duracao) * adultos + carnePP(duracao) / 2 * criancas;
-    let qdtTotalCerveja = cervejaPP(duracao) * adultos;
-    let qdtTotalBebidas = bebidasPP(duracao) * adultos + bebidasPP(duracao) / 2 * criancas;
+    let paoalhoSIM = inputPaoalhoSim.checked
+    
+    let carneCalculo = carnePP(duracao, paoalhoSIM);
+    let cervejaCalculo = cervejaPP(duracao, paoalhoSIM);
+    let bebidasCalculo = bebidasPP(duracao, paoalhoSIM);
+    
+    let qdtTotalCarne = carneCalculo * adultos + carneCalculo / 2 * criancas;
+    let qdtTotalCerveja = cervejaCalculo * adultos;
+    let qdtTotalBebidas = bebidasCalculo * adultos + bebidasCalculo / 2 * criancas;
 
     resultado.innerHTML = `<p>${qdtTotalCarne}g de Carne<p>`
     resultado.innerHTML += `<p>${qdtTotalCerveja}ml de Cerveja<p>`
     resultado.innerHTML += `<p>${qdtTotalBebidas}ml de Bebidas<p>`
-    resultado.innerHTML += `<p>${inputAdultos}ml de Bebidas<p>`
+    resultado.innerHTML += `<p>Adultos = ${adultos}<p>`
+    resultado.innerHTML += `<p>Crianças = ${criancas}<p>`
+    resultado.innerHTML += `<p>Duração (h) ${duracao}<p>`
 
 }
 
-function carnePP(duracao) {
+function carnePP(duracao, paoalhoSIM) {
+    let carne = 400;
 
     if(duracao >= 6) {
-        return 650;
-    } else {
-        return 400;
-    }  
+        carne = 650;
+    }
+
+    if(paoalhoSIM === true) {
+        carne = carne - 200;
+    }
+
+    return carne;
 }
 
-function cervejaPP(duracao) {
+function cervejaPP(duracao, paoalhoSIM) {
+    let cerveja = 1200;
 
     if(duracao >= 6) {
-        return 2000;
-    } else {
-        return 1200;
-    }  
+        cerveja = 2000;
+    }
+
+    if(paoalhoSIM === true) {
+        cerveja = cerveja - 600;
+    }
+
+    return cerveja;
 }
 
-function bebidasPP(duracao) {
+function bebidasPP(duracao, paoalhoSIM) {
+    let bebida = 1000;
 
     if(duracao >= 6) {
-        return 1500;
-    } else {
-        return 1000;
-    }  
+        bebida = 1500;
+    }
+
+    if(paoalhoSIM === true) {
+        bebida = bebida - 500;
+    }
+
+    return bebida;
 }
+
 

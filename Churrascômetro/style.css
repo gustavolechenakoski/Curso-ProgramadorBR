@@ -45,5 +45,9 @@ button {
 }
 
 p {
+    display: block;
+}
+
+.p-alho{
     display: inline-block;
 }
