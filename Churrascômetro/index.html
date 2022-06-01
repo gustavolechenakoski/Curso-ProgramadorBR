@@ -10,17 +10,23 @@
 <body>
     
         <div class="container">
+            <div class="config">Configurações</div>
         <h1>Churrascômetro</h1>
 
-        <input class= "input-form" id="adultos"  name="adultos" type="number" placeholder="Adultos">
-        <input class= "input-form" id="criancas"  name="criancas" type="number" placeholder="Crianças">
-        <input  class= "input-form" id="duracao"  name="duracao" type="number" placeholder="Duração (h)">
+        <input class= "input-form" id="adultos" name="adultos" type="number" 
+            placeholder="Quantidade de Adultos">
+
+        <input class= "input-form" id="criancas" name="criancas" type="number" 
+            placeholder="Quantidade de Crianças">
+
+        <input  class= "input-form" id="duracao" name="duracao" type="number"
+            placeholder="Duração do churrasco (horas)">
+
         <p class="p-alho">Pão de alho?</p>
+
         <input id="paoalho-sim"  name="paoalho" type="radio" value="sim" checked>Sim</input>
         <input id="paoalho-nao"  name="paoalho" type="radio" value="não">Não</input>
         
-
-
         <button onclick="calcular()"> Calcular </button>
 
         <div id="resultado">

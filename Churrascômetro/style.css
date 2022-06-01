@@ -42,6 +42,7 @@ button {
   margin-top: 10px;
   width: 100%;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 p {
@@ -50,4 +51,12 @@ p {
 
 .p-alho{
     display: inline-block;
+}
+
+.config {
+
+    text-align: right;
+    font-size: 12px;
+    text-decoration: underline;
+
 }
