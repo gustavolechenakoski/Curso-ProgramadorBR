@@ -7,64 +7,54 @@
 // Resultado os dados de entrada adultos, crianças e duração
 // mudar para const o que puder mandar
 
-let inputAdultos = document.getElementById("adultos");
-let inputCriancas = document.getElementById("criancas");
-let inputDuracao = document.getElementById("duracao");
-let inputPaoalhoSim = document.getElementById("paoalho-sim");
-//let inputPaoalhoNao = document.getElementById("paoalho-nao");
-
-
-
-
 
 let resultado = document.getElementById("resultado");
+
+function calculoCarne(duracao, paoalhoSIM, adultos, criancas){
+    
+    let carneCalculo = carnePP(duracao, paoalhoSIM); 
+    let qdtTotalCarne = carneCalculo * adultos + carneCalculo / 2 * criancas;
+
+    console.log(carneCalculo, adultos, criancas);
+
+    return qdtTotalCarne
+}
+
+function calculoCerveja(duracao, paoalhoSIM, adultos){
+
+    let cervejaCalculo = cervejaPP(duracao, paoalhoSIM);
+    let qdtTotalCerveja = cervejaCalculo * adultos;
+
+    return qdtTotalCerveja
+}
+
+function calculoBebidas(duracao, paoalhoSIM, adultos, criancas){
+
+    let bebidasCalculo = bebidasPP(duracao, paoalhoSIM);
+    let qdtTotalBebidas = bebidasCalculo * adultos + bebidasCalculo / 2 * criancas;
+
+    return qdtTotalBebidas
+}
 
 function calcular() {
     console.log("Calculando...")
     
-    let adultos = inputAdultos.value;
-    let criancas = inputCriancas.value;
-    let duracao = inputDuracao.value;
-    let paoalhoSIM = inputPaoalhoSim.checked;
+    let adultos = document.getElementById("adultos").value;
+    let criancas = document.getElementById("criancas").value;
+    let duracao = document.getElementById("duracao").value;
+    let paoalhoSIM = document.getElementById("paoalho-sim").checked
 
-    let carneCalculo = carnePP(duracao, paoalhoSIM);    
-    let cervejaCalculo = cervejaPP(duracao, paoalhoSIM);
-    let bebidasCalculo = bebidasPP(duracao, paoalhoSIM);
+    let carne = calculoCarne(duracao, paoalhoSIM, adultos, criancas);
+    let cerveja = calculoCerveja(duracao, paoalhoSIM, adultos);
+    let bebidas = calculoBebidas(duracao, paoalhoSIM, adultos, criancas);
 
-        function calculoCarne(){
-
-            let qdtTotalCarne = carneCalculo * adultos + carneCalculo / 2 * criancas;
-
-            return qdtTotalCarne
-        }
-
-        function calculoCerveja(){
-
-            let qdtTotalCerveja = cervejaCalculo * adultos;
-
-            return qdtTotalCerveja
-        }
-
-        function calculoBebidas(){
-            let qdtTotalBebidas = bebidasCalculo * adultos + bebidasCalculo / 2 * criancas;
-
-            return qdtTotalBebidas
-        }
-
-    //let qdtTotalCarne = carneCalculo * adultos + carneCalculo / 2 * criancas;
-    //let qdtTotalCerveja = cervejaCalculo * adultos;
-    //let qdtTotalBebidas = bebidasCalculo * adultos + bebidasCalculo / 2 * criancas;
-
-    resultado.innerHTML = `<p>${calculoCarne()}g de Carne<p>`
-    resultado.innerHTML += `<p>${calculoCerveja()}ml de Cerveja<p>`
-    resultado.innerHTML += `<p>${calculoBebidas()}ml de Bebidas<p>`
+    resultado.innerHTML = `<p>${carne}g de Carne<p>`
+    resultado.innerHTML += `<p>${cerveja}ml de Cerveja<p>`
+    resultado.innerHTML += `<p>${bebidas}ml de Bebidas<p>`
     resultado.innerHTML += `<p>Adultos = ${adultos}<p>`
     resultado.innerHTML += `<p>Crianças = ${criancas}<p>`
     resultado.innerHTML += `<p>Duração (h) ${duracao}<p>`
-
 }
-
-
   
 function carnePP(duracao, paoalhoSIM) {
     let carne = 400;
